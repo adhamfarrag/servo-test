@@ -7,7 +7,7 @@ while (True):
     # test values for a gripper servo
     servo.angle = 0
     sleep(1)
-    servo.angle = 90
+    servo.angle = 15
     sleep(1)
-    servo.angle = 180
+    servo.angle = 10
     sleep(1)
