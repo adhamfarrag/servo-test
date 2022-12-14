@@ -11,5 +11,5 @@ while (True):
     servo.angle = 0
     sleep(1)
     # code to move side servo to 180 degrees
-    servo.angle = 180
+    servo.angle = -90
     sleep(1)
