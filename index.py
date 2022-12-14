@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 GPIO.setmode(GPIO.BOARD)
+GPIO.setwarnings(False)
 
 Motor1A = 16
 Motor1B = 18
@@ -80,6 +81,7 @@ def go_right():
 
 
 while True:
+
     GPIO.output(Trigger, False)
     time.sleep(0.5)
     GPIO.output(Trigger, True)
