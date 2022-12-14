@@ -101,6 +101,7 @@ while True:
 
     if distance < 10:
         stop()
+        time.sleep(1)
     else:
         go_forward()
 
