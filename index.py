@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-from time import sleep
+import time
 
 GPIO.setmode(GPIO.BOARD)
 
@@ -77,9 +77,9 @@ def go_right():
 
 while True:
     GPIO.output(Trigger, False)
-    sleep(0.5)
+    time.sleep(0.5)
     GPIO.output(Trigger, True)
-    sleep(0.00001)
+    time.sleep(0.00001)
     GPIO.output(Trigger, False)
 
     while GPIO.input(Echo)==0:
