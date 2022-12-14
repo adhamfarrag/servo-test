@@ -26,6 +26,8 @@ GPIO.setup(Motor2E,GPIO.OUT)
 GPIO.setup(Trigger,GPIO.OUT)
 GPIO.setup(Echo,GPIO.IN)
 
+time.sleep(5)
+
 def go_forward():
     print ("Going forward")
     GPIO.output(Motor1A,GPIO.HIGH)
@@ -83,11 +85,14 @@ while True:
     GPIO.output(Trigger, False)
 
     while GPIO.input(Echo)==0:
-        pulse_start = time.time()
+        GPIO.output(Trigger, False)
+
+    pulse_start = time.time()
 
     while GPIO.input(Echo)==1:
         pulse_end = time.time()
 
+    pulse_end = time.time()
     pulse_duration = pulse_end - pulse_start
 
     distance = pulse_duration * 17150
