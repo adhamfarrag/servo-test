@@ -105,9 +105,7 @@ while True:
 
     if distance < 10:
         stop()
+        print("Too close")
         time.sleep(0.5)
     else:
         go_forward()
-
-
-GPIO.cleanup()
