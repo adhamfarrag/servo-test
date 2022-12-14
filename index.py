@@ -11,6 +11,9 @@ Motor2A = 11
 Motor2B = 13
 Motor2E = 15
 
+Trigger = 10
+Echo = 8
+
 # Confirugin the GPIO pins as outputs
 GPIO.setup(Motor1A,GPIO.OUT)
 GPIO.setup(Motor1B,GPIO.OUT)
