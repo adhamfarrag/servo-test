@@ -1,17 +1,28 @@
 import cv2
 import pyshine as ps
 
-HTML = """
+# make the html to stream video in full screen
+
+HTML = '''
+<!DOCTYPE html>
 <html>
 <head>
-<title>PyShine Live Streaming</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+    margin: 0;
+    }
+video {
+    width: 100%;
+    height: 100%;
+    }
+</style>
 </head>
-
 <body>
-<center><img src="stream.mjpg" width='1280' height='720' autoplay playsinline></center>
+<video autoplay></video>
 </body>
 </html>
-"""
+'''
 
 
 def main():
