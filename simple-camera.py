@@ -8,8 +8,7 @@ HTML = """
 </head>
 
 <body>
-<center><h1> PyShine Live Streaming using OpenCV </h1></center>
-<center><img src="stream.mjpg" width='640' height='480' autoplay playsinline></center>
+<center><img src="stream.mjpg" width='1280' height='720' autoplay playsinline></center>
 </body>
 </html>
 """
