@@ -1,7 +1,6 @@
 import RPi.GPIO as GPIO
 import time
-import sys
-import Tkinter as tk
+import tkinter as tk
 from sensor import distance
 
 
