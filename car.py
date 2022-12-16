@@ -122,7 +122,7 @@ def key_input(event):
 
 
 command = tk.Tk()
-command.bind('<keypress>', key_input)
+command.bind('<KeyPress>', key_input)
 command.mainloop()
 
 
