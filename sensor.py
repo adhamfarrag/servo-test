@@ -11,7 +11,7 @@ def distance(measure='cm'):
     GPIO.setup(Echo, GPIO.IN)
 
     time.sleep(0.3)
-    GPIO.ouput(Trigger, True)
+    GPIO.output(Trigger, True)
     time.sleep(0.00001)
 
     GPIO.output(Trigger, False)
