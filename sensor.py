@@ -11,14 +11,14 @@ def distance(measure='cm'):
     GPIO.setup(Echo, GPIO.IN)
 
     time.sleep(0.3)
-    GPIO.output(12, True)
+    GPIO.ouput(Trigger, True)
     time.sleep(0.00001)
 
-    GPIO.output(12, False)
-    while GPIO.input(16) == 0:
+    GPIO.output(Trigger, False)
+    while GPIO.input(Echo) == 0:
         nosig = time.time()
 
-    while GPIO.input(16) == 1:
+    while GPIO.input(Echo) == 1:
         sig = time.time()
 
     tl = sig - nosig
