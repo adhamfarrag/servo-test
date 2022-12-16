@@ -14,6 +14,8 @@ Motor2E = 22
 Trigger = 10
 Echo = 8
 
+Servo = 37
+
 
 def init():
     GPIO.setmode(GPIO.BOARD)
@@ -24,6 +26,8 @@ def init():
     GPIO.setup(Motor2A, GPIO.OUT)
     GPIO.setup(Motor2B, GPIO.OUT)
     GPIO.setup(Motor2E, GPIO.OUT)
+
+    GPIO.setup(Servo, GPIO.OUT)
 
 
 def go_forward(tf):
@@ -108,7 +112,12 @@ def key_input(event):
         go_right(sleep_time)
     elif key_press.lower() == "x":
         stop(sleep_time)
-
+    elif key_press.lower() == "p":
+        servo = GPIO.PWM(Servo, 50)
+        servo.start(0)
+        servo.ChangeDutyCycle(7.5)
+        time.sleep(0.5)
+        servo.stop()
     else:
         pass
 
