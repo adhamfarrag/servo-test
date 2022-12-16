@@ -130,16 +130,9 @@ def key_input(event):
         print("Servo")
         SetAngle(0)
         time.sleep(0.5)
-        SetAngle(-90)
+        SetAngle(120)
         time.sleep(0.5)
         SetAngle(0)
-        time.sleep(0.5)
-        SetAngle(90)
-        time.sleep(0.5)
-        SetAngle(0)
-        time.sleep(0.5)
-        SetAngle(-90)
-        time.sleep(0.5)
 
     else:
         pass
