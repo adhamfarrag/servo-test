@@ -128,12 +128,19 @@ def key_input(event):
         stop(sleep_time)
     elif key_press.lower() == "p":
         print("Servo")
+        SetAngle(0)
+        time.sleep(0.5)
+        SetAngle(-90)
+        time.sleep(0.5)
+        SetAngle(0)
+        time.sleep(0.5)
         SetAngle(90)
         time.sleep(0.5)
         SetAngle(0)
         time.sleep(0.5)
         SetAngle(-90)
         time.sleep(0.5)
+
     else:
         pass
 
