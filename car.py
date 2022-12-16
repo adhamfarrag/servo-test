@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 import tkinter as tk
 from sensor import distance
-from gpiozero import Servo
+
 
 Motor1A = 8
 Motor1B = 10
@@ -14,9 +14,6 @@ Motor2E = 22
 
 Trigger = 10
 Echo = 8
-
-ServoAngle = 37
-servo = Servo(ServoAngle)
 
 
 def init():
@@ -123,7 +120,7 @@ def key_input(event):
     elif key_press.lower() == "x":
         stop(sleep_time)
     elif key_press.lower() == "p":
-        move_servo()
+        print("Servo")
     else:
         pass
 
