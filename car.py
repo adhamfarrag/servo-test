@@ -96,6 +96,7 @@ def go_right(tf):
 
 def key_input(event):
 
+    init()
     print("Key:", event.char)
     key_press = event.char
     sleep_time = 0.060
