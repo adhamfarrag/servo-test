@@ -124,7 +124,6 @@ def key_input(event):
         stop(sleep_time)
     elif key_press.lower() == "p":
         move_servo()
-        p
     else:
         pass
 
