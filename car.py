@@ -1,4 +1,3 @@
-from time import sleep
 import RPi.GPIO as GPIO
 import time
 import tkinter as tk
@@ -17,7 +16,7 @@ Motor2E = 22
 Trigger = 10
 Echo = 8
 
-# servo = AngularServo(36, min_pulse_width=0.0006, max_pulse_width=0.0023)
+servo = AngularServo(40, min_pulse_width=0.0006, max_pulse_width=0.0023)
 
 
 def init():
@@ -96,15 +95,15 @@ def go_right(tf):
     time.sleep(tf)
 
 
-# def pick_item(tf):
-#
-#     servo.angle = 90
-#     time.sleep(tf)
-#     servo.angle = 0
-#     time.sleep(tf)
-#     servo.angle = -90
-#     time.sleep(tf)
-#     servo.detach()
+def pick_item(tf):
+
+    servo.angle = 90
+    time.sleep(tf)
+    servo.angle = 0
+    time.sleep(tf)
+    servo.angle = -90
+    time.sleep(tf)
+    servo.detach()
 
 
 def key_input(event):
@@ -124,8 +123,8 @@ def key_input(event):
         go_right(sleep_time)
     elif key_press.lower() == "x":
         stop(sleep_time)
-    # elif key_press.lower() == "p":
-        # pick_item(sleep_time)
+    elif key_press.lower() == "p":
+        pick_item(sleep_time)
     else:
         pass
 
