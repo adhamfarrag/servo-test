@@ -100,13 +100,11 @@ def go_right(tf):
 def pick_item(tf):
 
     servo.angle = 90
-    sleep(1)
+    time.sleep(tf)
     servo.angle = 0
-    sleep(1)
+    time.sleep(tf)
     servo.angle = -90
-    sleep(1)
-    servo.angle = 0
-    sleep(1)
+    time.sleep(tf)
     servo.detach()
 
 
