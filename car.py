@@ -121,7 +121,7 @@ def key_input(event):
         go_backward(0.5)
 
 
-command = tk.TK()
+command = tk.Tk()
 command.bind('<keypress>', key_input)
 command.mainloop()
 
