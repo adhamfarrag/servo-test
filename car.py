@@ -16,7 +16,9 @@ Motor2E = 22
 Trigger = 10
 Echo = 8
 
-servo = AngularServo(40, min_pulse_width=0.0006, max_pulse_width=0.0023)
+Angle = 37
+
+servo = AngularServo(Angle, min_pulse_width=0.0005, max_pulse_width=0.0025)
 
 
 def init():
