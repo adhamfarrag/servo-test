@@ -15,6 +15,8 @@ Motor2E = 22
 Trigger = 10
 Echo = 8
 
+ServoAngle = 37
+
 
 def init():
     GPIO.setmode(GPIO.BOARD)
@@ -25,6 +27,8 @@ def init():
     GPIO.setup(Motor2A, GPIO.OUT)
     GPIO.setup(Motor2B, GPIO.OUT)
     GPIO.setup(Motor2E, GPIO.OUT)
+
+    GPIO.setup(ServoAngle, GPIO.OUT)
 
 
 def go_forward(tf):
@@ -92,14 +96,17 @@ def go_right(tf):
     time.sleep(tf)
 
 
-def move_servo():
+def SetAngle(angle):
 
-    servo.min()
-    time.sleep(0.5)
-    servo.mid()
-    time.sleep(0.5)
-    servo.max()
-    time.sleep(0.5)
+    pwm = GPIO.PWM(ServoAngle, 50)
+    pwm.start(0)
+    duty = angle / 18 + 2
+    GPIO.output(03, True)
+    pwm.ChangeDutyCycle(duty)
+    time.sleep(1)
+    GPIO.output(03, False)
+    pwm.ChangeDutyCycle(0)
+    pwm.stop()
 
 
 def key_input(event):
@@ -121,6 +128,7 @@ def key_input(event):
         stop(sleep_time)
     elif key_press.lower() == "p":
         print("Servo")
+        SetAngle(90)
     else:
         pass
 
