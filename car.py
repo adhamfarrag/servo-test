@@ -1,8 +1,10 @@
 import RPi.GPIO as GPIO
 import time
-import tkinter as tk
+import tkinter
 from sensor import distance
 
+
+tinker = tkinter.Tk()
 
 Motor1A = 8
 Motor1B = 10
@@ -121,7 +123,7 @@ def key_input(event):
         go_backward(0.5)
 
 
-command = tk.TK()
+command = tinker.TK()
 command.bind('<keypress>', key_input)
 command.mainloop()
 
