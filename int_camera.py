@@ -3,7 +3,7 @@ import pyshine as ps
 import tensorflow as tf
 
 # Load the Keras model that you trained in Teachable Machine
-model = tf.keras.models.load_model('path/to/model.h5')
+model = tf.keras.models.load_model('model/keras_model.h5')
 
 HTML = """
 <html>
