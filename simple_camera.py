@@ -26,13 +26,14 @@ img {
 def main():
     StreamProps = ps.StreamProps
     StreamProps.set_Page(StreamProps, HTML)
-    address = ('192.168.0.139', 9000)  # Enter your IP address
+    address = ('192.168.0.140', 9000)  # Enter your IP address
     try:
         StreamProps.set_Mode(StreamProps, 'cv2')
         capture = cv2.VideoCapture(0)
         capture.set(cv2.CAP_PROP_BUFFERSIZE, 4)
-        capture.set(cv2.CAP_PROP_FRAME_WIDTH, 320)
-        capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 240)
+        # make the stream match a 720 camera
+        capture.set(cv2.CAP_PROP_FRAME_WIDTH,  1280)
+        capture.set(cv2.CAP_PROP_FRAME_HEIGHT,  720)
         capture.set(cv2.CAP_PROP_FPS, 30)
         StreamProps.set_Capture(StreamProps, capture)
         StreamProps.set_Quality(StreamProps, 90)
