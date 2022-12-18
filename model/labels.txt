@@ -1,0 +1,2 @@
+0 Good fruit
+1 Bad fruit
