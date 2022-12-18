@@ -154,7 +154,7 @@ def key_input(event):
         print("Servo Two")
         SetServoTwoAngle(0)
         time.sleep(0.5)
-        SetServoTwoAngle(40)
+        SetServoTwoAngle(-60)
         time.sleep(0.5)
         SetServoTwoAngle(0)
 
