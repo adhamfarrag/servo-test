@@ -99,8 +99,8 @@ def main():
     # fix this line
     model = tf.keras.models.load_model(model_path, compile=False)
 
-    # initialize webcam video object
-    cap = cv2.VideoCapture(0)
+    # stream video from html url
+    cap = cv2.VideoCapture("http://192.168.0.140:9000/index.html")
 
     # width & height of webcam video in pixels -> adjust to your size
     # adjust values if you see black bars on the sides of capture window
