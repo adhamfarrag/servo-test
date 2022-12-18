@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-Trigger = 26
+Trigger = 28
 Echo = 24
 
 
