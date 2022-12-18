@@ -17,6 +17,7 @@ Echo = 8
 
 ServoOneAngle = 37
 ServoTwoAngle = 36
+ServoThreeAngle = 32
 
 
 def init():
@@ -31,6 +32,7 @@ def init():
 
     GPIO.setup(ServoOneAngle, GPIO.OUT)
     GPIO.setup(ServoTwoAngle, GPIO.OUT)
+    GPIO.setup(ServoThreeAngle, GPIO.OUT)
 
 
 def go_forward(tf):
@@ -98,28 +100,15 @@ def go_right(tf):
     time.sleep(tf)
 
 
-def SetServoOneAngle(angle):
+def setServoAngle(servo, angle):
 
-    pwm = GPIO.PWM(ServoOneAngle, 50)
+    pwm = GPIO.PWM(servo, 50)
     pwm.start(0)
     duty = angle / 18 + 2
-    GPIO.output(ServoOneAngle, True)
+    GPIO.output(servo, True)
     pwm.ChangeDutyCycle(duty)
     time.sleep(1)
-    GPIO.output(ServoOneAngle, False)
-    pwm.ChangeDutyCycle(0)
-    pwm.stop()
-
-
-def SetServoTwoAngle(angle):
-
-    pwm = GPIO.PWM(ServoTwoAngle, 50)
-    pwm.start(0)
-    duty = angle / 18 + 2
-    GPIO.output(ServoTwoAngle, True)
-    pwm.ChangeDutyCycle(duty)
-    time.sleep(1)
-    GPIO.output(ServoTwoAngle, False)
+    GPIO.output(servo, False)
     pwm.ChangeDutyCycle(0)
     pwm.stop()
 
@@ -144,19 +133,27 @@ def key_input(event):
 
     elif key_press.lower() == "p":
         print("Servo One")
-        SetServoOneAngle(0)
+        setServoAngle(ServoOneAngle, 0)
         time.sleep(0.5)
-        SetServoOneAngle(180)
+        setServoAngle(ServoOneAngle, 180)
         time.sleep(0.5)
-        SetServoOneAngle(0)
+        setServoAngle(ServoOneAngle, 0)
 
     elif key_press.lower() == "o":
         print("Servo Two")
-        SetServoTwoAngle(80)
+        setServoAngle(ServoTwoAngle, 80)
         time.sleep(0.5)
-        SetServoTwoAngle(0)
+        setServoAngle(ServoTwoAngle, 0)
         time.sleep(0.5)
-        SetServoTwoAngle(80)
+        setServoAngle(ServoTwoAngle, 80)
+
+    elif key_press.lower() == "i":
+        print("Servo Two")
+        setServoAngle(ServoThreeAngle, 60)
+        time.sleep(0.5)
+        setServoAngle(ServoThreeAngle, 0)
+        time.sleep(0.5)
+        setServoAngle(ServoThreeAngle, 60)
 
     else:
         pass
