@@ -152,11 +152,11 @@ def key_input(event):
 
     elif key_press.lower() == "o":
         print("Servo Two")
-        SetServoTwoAngle(0)
-        time.sleep(0.5)
-        SetServoTwoAngle(-60)
+        SetServoTwoAngle(80)
         time.sleep(0.5)
         SetServoTwoAngle(0)
+        time.sleep(0.5)
+        SetServoTwoAngle(80)
 
     else:
         pass
